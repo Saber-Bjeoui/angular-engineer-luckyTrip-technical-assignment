@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  position: relative;
+
+  .image-wrapper {
+
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .content {
+    max-width: 1024px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

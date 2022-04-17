@@ -4,16 +4,9 @@
   height: 100vh;
 
   header {
-    position: relative;
-    z-index: 1;
-  }
-
-  .image-wrapper {
     position: fixed;
-    top: 0;
-    img {
-      max-width: 100%;
-    }
+    z-index: 1;
+    width: 100%;
   }
 
   .main-content {
