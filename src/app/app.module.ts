@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CardItemComponent } from './card-item/card-item.component';
 import { FirstSectionComponent } from './first-section/first-section.component';
+import { ItemsListComponent } from './items-list/items-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FirstSectionComponent } from './first-section/first-section.component';
     HeaderComponent,
     SearchPageComponent,
     CardItemComponent,
-    FirstSectionComponent
+    FirstSectionComponent,
+    ItemsListComponent
   ],
   imports: [
     BrowserModule,
