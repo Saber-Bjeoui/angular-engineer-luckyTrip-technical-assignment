@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  background-color: #211F2A;
+  height: 100vh;
+
+  header {
+    position: relative;
+    z-index: 1;
+  }
+
+  .image-wrapper {
+    position: fixed;
+    top: 0;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .main-content {
+    position: relative;
+  }
+}
