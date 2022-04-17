@@ -7,6 +7,7 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CardItemComponent } from './card-item/card-item.component';
+import { FirstSectionComponent } from './first-section/first-section.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CardItemComponent } from './card-item/card-item.component';
     SearchInputComponent,
     HeaderComponent,
     SearchPageComponent,
-    CardItemComponent
+    CardItemComponent,
+    FirstSectionComponent
   ],
   imports: [
     BrowserModule,
