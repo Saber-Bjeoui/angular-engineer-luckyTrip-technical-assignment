@@ -10,6 +10,7 @@ import { CardItemComponent } from './card-item/card-item.component';
 import { FirstSectionComponent } from './first-section/first-section.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     SearchPageComponent,
     CardItemComponent,
     FirstSectionComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
