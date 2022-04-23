@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, startWith, Subject, switchMap } from 'rxjs';
 import { DestinationsService } from 'src/app/destinations.service';
 import { Destination } from 'src/app/models/destination.model';
 
@@ -8,17 +8,18 @@ import { Destination } from 'src/app/models/destination.model';
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss']
 })
-export class SearchPageComponent implements OnInit {
+export class SearchPageComponent {
 
   bgImageUrl =  'url("../../../assets/images/background_1.png")';
 
   constructor(private service: DestinationsService) { }
 
-  // by default we will load destinations from france
-  destinations$: Observable<Destination[]> = this.service.getDestinations$('france') as Observable<Destination[]>;
+  onSearchClick$ = new Subject<string>()
 
-  ngOnInit(): void {
-    this.destinations$.subscribe(console.log)
-  }
+  destinations$: Observable<Destination[]> = this.onSearchClick$.pipe(
+    startWith(''),
+    switchMap((searchValue: string) => this.service.getDestinations$(searchValue) as Observable<Destination[]>)
+  )
+
 
 }

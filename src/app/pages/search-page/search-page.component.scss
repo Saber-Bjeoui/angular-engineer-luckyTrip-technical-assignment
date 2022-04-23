@@ -7,7 +7,6 @@
   .image-wrapper {
     position: relative;
 
-
     img {
       width: 100%;
     }
@@ -15,7 +14,6 @@
   }
 
   .content {
-
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,5 +49,6 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 5em 2em 10em;
+    min-height: 300px;
   }
 }

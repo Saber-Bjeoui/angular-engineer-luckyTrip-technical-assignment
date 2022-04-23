@@ -1,5 +1,5 @@
 <div class="search-wrapper">
   <img src="assets/images/magnifying_glass_large.png" alt="" class="search-icon">
-  <input type="text" [placeholder]="placeholder" class="search-field">
-  <button type="button" class="btn-search">GO</button>
+  <input type="text" [placeholder]="placeholder" class="search-field" [(ngModel)]="searchValue">
+  <button type="button" class="btn-search" (click)="onClick()">GO</button>
 </div>
