@@ -9,5 +9,5 @@
     <div class="shadow"></div>
 </section>
 <section class="list-section">
-  <app-items-list></app-items-list>
+  <app-items-list [items]="destinations$ | async"></app-items-list>
 </section>

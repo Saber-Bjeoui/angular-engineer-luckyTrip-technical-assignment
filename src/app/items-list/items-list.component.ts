@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Destination } from '../models/destination.model';
 
 @Component({
   selector: 'app-items-list',
@@ -8,5 +9,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ItemsListComponent {
 
   @Input() listTitle = 'Trending';
+  @Input() items: Destination[] | null = []
 
 }
