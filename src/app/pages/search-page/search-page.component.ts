@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
+  bgImageUrl =  'url("../../../assets/images/background_1.png")';
+
   constructor() { }
 
   ngOnInit(): void {

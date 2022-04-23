@@ -1,7 +1,7 @@
 :host {
   display: block;
   background-color: #211F2A;
-  height: 100vh;
+  min-width: 400px;
 
   header {
     position: fixed;
@@ -12,4 +12,6 @@
   .main-content {
     position: relative;
   }
+
+
 }
