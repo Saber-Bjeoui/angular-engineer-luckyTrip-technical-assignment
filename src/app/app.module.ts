@@ -11,7 +11,7 @@ import { FirstSectionComponent } from './first-section/first-section.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from './loader/loader.component';
-import { ResultsPageComponent } from './results-page/results-page.component';
+import { ResultsPageComponent } from './pages/results-page/results-page.component';
 
 @NgModule({
   declarations: [
