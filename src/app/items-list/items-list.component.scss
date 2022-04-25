@@ -1,11 +1,6 @@
 :host {
   display: block;
 
-  h2 {
-    text-align: left;
-    color: #7BFBFF;
-  }
-
   .grid-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(351px, 1fr));

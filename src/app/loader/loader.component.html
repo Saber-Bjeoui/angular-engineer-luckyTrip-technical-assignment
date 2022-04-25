@@ -1,1 +1,4 @@
-<p>loader works!</p>
+
+<ng-container *ngIf="loader.isLoading$ | async">
+  <span>loading ...</span>
+</ng-container>

@@ -14,6 +14,7 @@ export class SearchInputComponent {
   public searchValue = '';
 
   onClick() {
+    console.log('from onclick')
     this.btnClick.emit(this.searchValue)
   }
 

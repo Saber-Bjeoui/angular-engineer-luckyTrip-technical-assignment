@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, startWith, Subject, switchMap } from 'rxjs';
+import { isPlatformWorkerApp } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { delay, map, Observable, startWith, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { DestinationsService } from 'src/app/destinations.service';
+import { LoaderService } from 'src/app/loader.service';
 import { Destination } from 'src/app/models/destination.model';
 
 @Component({
@@ -8,18 +10,43 @@ import { Destination } from 'src/app/models/destination.model';
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss']
 })
-export class SearchPageComponent {
+export class SearchPageComponent implements OnDestroy{
 
   bgImageUrl =  'url("../../../assets/images/background_1.png")';
 
-  constructor(private service: DestinationsService) { }
+  constructor(private service: DestinationsService, public loader: LoaderService) {
+
+   }
 
   onSearchClick$ = new Subject<string>()
+  onDestroy$ = new Subject()
+  isFirstLoad = true;
 
   destinations$: Observable<Destination[]> = this.onSearchClick$.pipe(
     startWith(''),
-    switchMap((searchValue: string) => this.service.getDestinations$(searchValue) as Observable<Destination[]>)
+    tap(() => this.loader.isLoading(true)),
+    switchMap((searchValue: string) => this.service.getDestinations$(searchValue) as Observable<Destination[]>),
+    tap(() => {
+      this.loader.isLoading(false)
+      this.isFirstLoad = false;
+    }),
+    takeUntil(this.onDestroy$)
   )
 
+  showNoDataMessage$: Observable<boolean> = this.destinations$
+  .pipe(
+    tap((v) => console.log('dest ==> ', v)),
+
+    switchMap((items: Destination[]) => this.loader.isLoading$
+      .pipe(map((isLoading: boolean) => isLoading === false && items.length === 0))
+    ),
+    startWith(false),
+    tap(console.log),
+  )
+
+  ngOnDestroy() {
+    this.onDestroy$.next(null);
+    this.onDestroy$.complete();
+  }
 
 }

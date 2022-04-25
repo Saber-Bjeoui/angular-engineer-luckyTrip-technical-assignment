@@ -29,6 +29,8 @@
       border-radius: 30px;
       outline: none;
       background: transparent;
+      font-size: 1.5rem;
+      width: 100%;
     }
 
     .btn-search {
@@ -40,6 +42,7 @@
       border-radius: 30px;
       font-weight: 900;
       font-size: 1rem;
+      cursor: pointer;
     }
   }
 }

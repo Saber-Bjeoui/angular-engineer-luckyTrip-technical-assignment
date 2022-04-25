@@ -9,5 +9,19 @@
     <div class="shadow"></div>
 </section>
 <section class="list-section">
-  <app-items-list [items]="destinations$ | async"></app-items-list>
+  <h2>Trending</h2>
+  <ng-container *ngIf="destinations$ | async as destinations">
+    <ng-container *ngIf="destinations.length">
+      <app-items-list [items]="destinations"></app-items-list>
+    </ng-container>
+    <ng-container *ngIf="showNoDataMessage$ | async">
+      We are sorry, we couldn't find any destinations that matches your search!
+    </ng-container>
+  </ng-container>
+  <app-loader></app-loader>
 </section>
+
+
+
+
+

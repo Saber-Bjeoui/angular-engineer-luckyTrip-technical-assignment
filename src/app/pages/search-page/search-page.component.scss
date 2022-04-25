@@ -48,7 +48,12 @@
   .list-section {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 5em 2em 10em;
-    min-height: 300px;
+    padding: 1em 2em 10em;
+    min-height: 350px;
+
+    h2 {
+      text-align: left;
+      color: #7BFBFF;
+    }
   }
 }

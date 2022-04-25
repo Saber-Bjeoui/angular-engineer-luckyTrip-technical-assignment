@@ -22,6 +22,5 @@ export class DestinationsService {
       .pipe(
         map(response => response.destinations),
         filter(destinations => destinations !== null),
-        startWith([] as Destination[])
       )
 }

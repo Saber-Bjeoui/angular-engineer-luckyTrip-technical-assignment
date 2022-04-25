@@ -8,7 +8,6 @@ import { Destination } from '../models/destination.model';
 })
 export class ItemsListComponent {
 
-  @Input() listTitle = 'Trending';
   @Input() items: Destination[] | null = []
 
 }
