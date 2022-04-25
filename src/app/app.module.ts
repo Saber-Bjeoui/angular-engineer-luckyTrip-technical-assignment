@@ -11,6 +11,7 @@ import { FirstSectionComponent } from './first-section/first-section.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from './loader/loader.component';
+import { ResultsPageComponent } from './results-page/results-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoaderComponent } from './loader/loader.component';
     CardItemComponent,
     FirstSectionComponent,
     ItemsListComponent,
-    LoaderComponent
+    LoaderComponent,
+    ResultsPageComponent
   ],
   imports: [
     BrowserModule,
