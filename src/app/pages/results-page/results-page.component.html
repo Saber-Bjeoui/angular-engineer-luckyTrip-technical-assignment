@@ -1,1 +1,25 @@
-<p>results-page works!</p>
+<section class="content" [style.background-image]="bgImageUrl">
+  <div class="title">
+    <h1>Rome</h1>
+    <h3>Italty</h3>
+  </div>
+  <div class="shadow"></div>
+</section>
+<section class="list-section">
+  <div class="desciprtion-wrapper">
+    <h2 class="description-title">What's it like?</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+    </p>
+  </div>
+  <h2>Blog Posts</h2>
+  <!-- <ng-container *ngIf="destinations$ | async as destinations">
+    <ng-container *ngIf="destinations.length">
+      <app-items-list [items]="destinations"></app-items-list>
+    </ng-container>
+    <ng-container *ngIf="showNoDataMessage$ | async">
+      We are sorry, we couldn't find any destinations that matches your search!
+    </ng-container>
+  </ng-container> -->
+  <app-loader></app-loader>
+</section>

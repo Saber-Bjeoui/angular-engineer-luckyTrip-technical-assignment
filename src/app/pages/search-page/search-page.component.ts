@@ -14,9 +14,7 @@ export class SearchPageComponent implements OnDestroy{
 
   bgImageUrl =  'url("../../../assets/images/background_1.png")';
 
-  constructor(private service: DestinationsService, public loader: LoaderService) {
-
-   }
+  constructor(private service: DestinationsService, public loader: LoaderService) {}
 
   onSearchClick$ = new Subject<string>()
   onDestroy$ = new Subject()

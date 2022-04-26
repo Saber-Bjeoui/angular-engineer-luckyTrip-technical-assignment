@@ -1,0 +1,44 @@
+:host {
+  display: block;
+
+
+  .content {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    align-items: flex-end;
+
+    .title {
+
+      margin-bottom: 40px;
+      h1{
+        font-size: 2.5rem;
+        margin-bottom: .5rem;
+        font-weight: 900;
+      }
+
+      h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .list-section {
+    position: relative;
+    margin-top: -65px;
+    text-align: left;
+    min-height: 450px;
+
+    h2, p {
+      font-size: 2rem;
+    }
+
+    .description-title {
+      color: #FFED7B;
+    }
+  }
+
+}
+
