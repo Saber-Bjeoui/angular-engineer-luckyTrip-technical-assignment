@@ -1,5 +1,6 @@
 import { isPlatformWorkerApp } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { delay, map, Observable, startWith, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { DestinationsService } from 'src/app/destinations.service';
 import { LoaderService } from 'src/app/loader.service';
@@ -14,7 +15,10 @@ export class SearchPageComponent implements OnDestroy{
 
   bgImageUrl =  'url("../../../assets/images/background_1.png")';
 
-  constructor(private service: DestinationsService, public loader: LoaderService) {}
+  constructor(
+    private service: DestinationsService,
+    public loader: LoaderService,
+    private router: Router) {}
 
   onSearchClick$ = new Subject<string>()
   onDestroy$ = new Subject()
@@ -41,6 +45,10 @@ export class SearchPageComponent implements OnDestroy{
     startWith(false),
     tap(console.log),
   )
+
+  onCardClick(destinationId: number) {
+    this.router.navigate(['details', destinationId])
+  }
 
   ngOnDestroy() {
     this.onDestroy$.next(null);

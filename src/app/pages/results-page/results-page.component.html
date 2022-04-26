@@ -1,25 +1,27 @@
-<section class="content" [style.background-image]="bgImageUrl">
-  <div class="title">
-    <h1>Rome</h1>
-    <h3>Italty</h3>
-  </div>
-  <div class="shadow"></div>
-</section>
-<section class="list-section">
-  <div class="desciprtion-wrapper">
-    <h2 class="description-title">What's it like?</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
-    </p>
-  </div>
-  <h2>Blog Posts</h2>
-  <!-- <ng-container *ngIf="destinations$ | async as destinations">
-    <ng-container *ngIf="destinations.length">
-      <app-items-list [items]="destinations"></app-items-list>
-    </ng-container>
-    <ng-container *ngIf="showNoDataMessage$ | async">
-      We are sorry, we couldn't find any destinations that matches your search!
-    </ng-container>
-  </ng-container> -->
-  <app-loader></app-loader>
-</section>
+<ng-container *ngIf="destination$ | async as destination">
+  <section class="content" [style.background-image]="'url(' + destination.thumbnail.image_url + ')' ">
+    <div class="title">
+      <h1>{{ destination.city }}</h1>
+      <h3>{{ destination.country_name }}</h3>
+    </div>
+    <div class="shadow"></div>
+  </section>
+  <section class="list-section">
+    <div class="desciprtion-wrapper">
+      <h2 class="description-title">What's it like?</h2>
+      <p>
+        {{ destination.description.text }}
+      </p>
+    </div>
+    <h2>Blog Posts</h2>
+    <app-items-list>
+      <app-card-item *ngFor="let item of [1,2,3,4,5,6]" ></app-card-item>
+    </app-items-list>
+  </section>
+
+  <section class="find-trip">
+    <h1>Find a trip to Rome</h1>
+    <p>Tap the Lucky button to get started…</p>
+    <img src="assets/images/lucky_button.png" alt="">
+  </section>
+</ng-container>

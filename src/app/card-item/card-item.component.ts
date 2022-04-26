@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input,  OnInit, Output } from '@angular/core';
 import { Destination } from '../models/destination.model';
 
 @Component({
@@ -6,13 +6,7 @@ import { Destination } from '../models/destination.model';
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss']
 })
-export class CardItemComponent implements OnInit {
-
+export class CardItemComponent {
   @Input() item?: Destination;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Output() cardClick = new EventEmitter()
 }

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DestinationsService } from 'src/app/destinations.service';
+import { LoaderService } from 'src/app/loader.service';
 
 @Component({
   selector: 'app-results-page',
@@ -7,9 +10,12 @@ import { Component } from '@angular/core';
 })
 export class ResultsPageComponent {
 
-  bgImageUrl =  'url("../../../assets/images/Background_2.png")';
+  constructor(
+    private service: DestinationsService,
+    public loader: LoaderService,
+    private route: ActivatedRoute
+    ) { }
 
-  constructor() { }
-
-
+  destinationId = this.route.snapshot.params['id']
+  destination$ =  this.service.getDestinationById$(this.destinationId)
 }

@@ -12,7 +12,9 @@
   <h2>Trending</h2>
   <ng-container *ngIf="destinations$ | async as destinations">
     <ng-container *ngIf="destinations.length">
-      <app-items-list [items]="destinations"></app-items-list>
+      <app-items-list>
+        <app-card-item *ngFor="let item of destinations" [item]="item" (cardClick)="onCardClick(item.id)"></app-card-item>
+      </app-items-list>
     </ng-container>
     <ng-container *ngIf="showNoDataMessage$ | async">
       We are sorry, we couldn't find any destinations that matches your search!

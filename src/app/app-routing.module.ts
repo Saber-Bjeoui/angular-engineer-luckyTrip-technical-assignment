@@ -9,7 +9,7 @@ const routes: Routes = [
     component: SearchPageComponent
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: ResultsPageComponent
   },
 
